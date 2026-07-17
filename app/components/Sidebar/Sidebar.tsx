@@ -1,25 +1,8 @@
 import Link from "next/link";
 import SidebarItem from "./SidebarItem";
+import { menuItems } from "@/app/data/menuItem";
 
 export default function Sidebar() {
-    const menuItems = [
-        {
-            label: "Dashboard",
-            href: "/"
-        },
-        {
-            label: "Projects",
-            href: "/projects"
-        },
-        {
-            label: "Tasks",
-            href: "/tasks"
-        },
-        {
-            label: "Settings",
-            href: "/settings"
-        },
-    ];
 
     return (
         <aside className="w-64 bg-white shadow-md">
