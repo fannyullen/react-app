@@ -1,4 +1,5 @@
 import Link from "next/link";
+import SidebarItem from "./SidebarItem";
 
 export default function Sidebar() {
     const menuItems = [
@@ -27,14 +28,11 @@ export default function Sidebar() {
                     {/*För varje objekt i menuItems, skapa ett nytt li-element*/}
                     {/* Key = för att hålla reda på varje element i listan */}
                     {menuItems.map((item) => (
-                        <li key={item.href}>
-                            <Link
-                            href={item.href}
-                            className="cursor-pointer rounded-md p-2 hover:bg-slate-200"
-                            >
-                                {item.label}
-                            </Link>
-                        </li>
+                        <SidebarItem 
+                        key={item.href}
+                        label={item.label}
+                        href={item.href}
+                        />
                     ))}
                 </ul>
             </nav>
