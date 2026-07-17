@@ -33,7 +33,7 @@ export default function RootLayout({
         <Navbar />
         <div className="min-h-screen flex bg-gray-100">
           <Sidebar />
-          <main className="flex-1 p-8 text-2xl text-gray-300">
+          <main className="flex-1 p-8 text-2xl text-gray-400">
           {children}
           </main>
         </div>

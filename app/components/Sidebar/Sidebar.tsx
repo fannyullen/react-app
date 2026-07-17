@@ -7,7 +7,7 @@ export default function Sidebar() {
     return (
         <aside className="w-64 bg-white shadow-md">
             <nav className="p-6">
-                <ul className="space-y-4 text-gray-300">
+                <ul className="space-y-4 text-gray-400">
                     {/*För varje objekt i menuItems, skapa ett nytt li-element*/}
                     {/* Key = för att hålla reda på varje element i listan */}
                     {menuItems.map((item) => (
