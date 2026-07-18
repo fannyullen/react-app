@@ -2,6 +2,7 @@
 
 import DashboardCard from "./components/Dashboard/DashboardCard";
 import { useState } from "react";
+import TaskList from "./components/Tasks/TaskList";
 
 export default function Home() {
   const [tasks, setTasks] = useState([
@@ -24,9 +25,34 @@ export default function Home() {
 
   const [newTask, setNewTask] = useState("");
 
+  const task = {
+    id: Date.now(),
+    title: newTask,
+    completed: false,
+};
+
   const openTasks = tasks.filter(task => !task.completed).length;
 
   const completedTasks = tasks.filter(task => task.completed).length;
+
+  function handleAddTask(event: React.FormEvent) {
+    {/* hindra standard-beteendet */}
+    event.preventDefault();
+
+    {/* Om användaren bara skriver mellanslag så vill vi inte skapa en tom uppgift. Trim tar bort mellanslag i början och slutet */}
+    if (newTask.trim() === "") return;
+
+    const task = {
+      id: Date.now(),
+      title: newTask,
+      completed: false,
+    };
+
+    {/* Spread operator */}
+    setTasks([...tasks, task]);
+
+    setNewTask("");
+  }
 
   return (
     <main>
@@ -58,11 +84,15 @@ export default function Home() {
           className="rounded-md border p-2"
           value={newTask}
           onChange={(event) => setNewTask(event.target.value)}
+          onSubmit={handleAddTask}
           />
           <button className="ml-2 rounded-md bg-slate-950 px-4 py-2 text-white cursor-pointer">
             Add Task
           </button>
       </form>
+      <TaskList
+        tasks={tasks}
+      />
     </main>
   );
 }

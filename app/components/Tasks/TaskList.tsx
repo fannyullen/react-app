@@ -1,17 +1,32 @@
-"use client";
+import TaskCard from "./TaskCard";
 
-import { useState } from "react";
+type Task = {
+    id: number;
+    title: string;
+    completed: boolean;
+};
 
-export default function TaskList() {
-    const [count, setCount] = useState(0);
+type TaskListProps = {
+    tasks: Task[];
+};
+
+export default function TaskList({
+    tasks,
+}: TaskListProps) {
     return (
-        <>
-            <h1>{count}</h1>
-            <button className="cursor-pointer"
-            onClick={() => setCount(count + 1)}
-            >
-                Increase
-            </button>
-        </>
+        <section className="mt-10">
+            <h2 className="mb-4 text-2xl font-bold">
+                Tasks
+            </h2>
+
+            {tasks.map((task) => (
+                <TaskCard
+                key={task.id}
+                id={task.id}
+                title={task.title}
+                completed={task.completed}
+                />
+            ))}
+        </section>
     );
 }
