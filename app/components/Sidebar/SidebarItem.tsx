@@ -21,7 +21,7 @@ export default function SidebarItem({
             className={`block rounded-md p-2 transition-colors ${
                 isActive
                 ? "bg-fuchsia-950 text-white"
-                : "hover:border border-white/20"
+                : "hover:border border-white/20 hover:bg-white/10"
             }`}
             >
             {label}

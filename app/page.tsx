@@ -3,6 +3,7 @@
 import DashboardCard from "./components/Dashboard/DashboardCard";
 import { useState } from "react";
 import TaskList from "./components/Tasks/TaskList";
+import { Task } from "./data/task";
 
 export default function Home() {
   const [tasks, setTasks] = useState([
@@ -29,7 +30,7 @@ export default function Home() {
     id: Date.now(),
     title: newTask,
     completed: false,
-};
+  };
 
   const openTasks = tasks.filter(task => !task.completed).length;
 
@@ -42,16 +43,24 @@ export default function Home() {
     {/* Om användaren bara skriver mellanslag så vill vi inte skapa en tom uppgift. Trim tar bort mellanslag i början och slutet */}
     if (newTask.trim() === "") return;
 
-    const task = {
-      id: Date.now(),
-      title: newTask,
-      completed: false,
-    };
-
     {/* Spread operator */}
     setTasks([...tasks, task]);
 
     setNewTask("");
+  }
+
+  function toggleTask(id:number) {
+    {/* Det nya värdet hänger på det gamla värdet */}
+    setTasks((previousTasks) =>
+      previousTasks.map((task) =>
+      task.id === id
+      ? {
+        ...task,
+        completed: !task.completed,
+      }
+      : task
+      )
+    );
   }
 
   return (
@@ -92,6 +101,7 @@ export default function Home() {
       </form>
       <TaskList
         tasks={tasks}
+        onToggleTask={toggleTask}
       />
     </main>
   );

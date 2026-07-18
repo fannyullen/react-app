@@ -8,7 +8,7 @@ export default function DashboardCard({
     value,
 }: DashboardCardProps) {
     return (
-        <div className="bg-white/10 p-6 backdrop-blur-xl border border-white/20 shadow-2xl rounded-2xl">
+        <div className="bg-white/10 p-6 backdrop-blur-xl border border-white/20 shadow-2xl rounded-2xl hover:bg-white/5 cursor-pointer">
             <h2 className="text-sm font-medium text-gray-500">
                 {title}
             </h2>

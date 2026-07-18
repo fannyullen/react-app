@@ -1,17 +1,14 @@
 import TaskCard from "./TaskCard";
-
-type Task = {
-    id: number;
-    title: string;
-    completed: boolean;
-};
+import { Task } from "@/app/data/task";
 
 type TaskListProps = {
     tasks: Task[];
+    onToggleTask: (id: number) => void;
 };
 
 export default function TaskList({
     tasks,
+    onToggleTask,
 }: TaskListProps) {
     return (
         <section className="mt-10">
@@ -25,6 +22,7 @@ export default function TaskList({
                 id={task.id}
                 title={task.title}
                 completed={task.completed}
+                onToggleTask={onToggleTask}
                 />
             ))}
         </section>
