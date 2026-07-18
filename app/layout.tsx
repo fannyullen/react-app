@@ -29,13 +29,15 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
-        <Navbar />
-        <div className="min-h-screen flex bg-gray-100">
-          <Sidebar />
-          <main className="flex-1 p-8 text-2xl text-gray-400">
-          {children}
-          </main>
+      <body className="min-h-full flex flex-col bg-slate-950">
+        <div className="fixed inset-0 bg-gradient-to-br from-fuchsia-900 via-slate-950 to-pink-800">
+          <Navbar />
+          <div className="min-h-screen flex">
+            <Sidebar />
+            <main className="flex-1 p-8">
+            {children}
+            </main>
+          </div>
         </div>
       </body>
     </html>
