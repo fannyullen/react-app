@@ -95,7 +95,7 @@ export default function Home() {
           onChange={(event) => setNewTask(event.target.value)}
           onSubmit={handleAddTask}
           />
-          <button className="ml-2 rounded-md bg-slate-950 px-4 py-2 text-white cursor-pointer">
+          <button className="ml-2 rounded-md px-4 py-2 text-white bg-white/10 backdrop-blur-xl border border-white/20 shadow-2xl cursor-pointer">
             Add Task
           </button>
       </form>
