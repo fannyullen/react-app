@@ -15,7 +15,7 @@ export default function Navbar() {
                 <FiMenu />
             </div>
             <div className="flex gap-4">
-                <button className="cursor-pointer" onClick={toggleTheme}>
+                <button className="cursor-pointer w-10 h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 transition duration-300" onClick={toggleTheme}>
                     {theme === "dark" ? "☀️" : "🌙"}
                 </button>
                 <button className="cursor-pointer">Profil</button>
