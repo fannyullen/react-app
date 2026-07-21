@@ -20,7 +20,7 @@ export default function SidebarItem({
             href={href}
             className={`block rounded-md p-2 transition-colors ${
                 isActive
-                ? "bg-fuchsia-950 text-white"
+                ? "bg-indigo-300 dark:bg-fuchsia-950 text-white"
                 : "hover:border border-white/20 hover:bg-white/10"
             }`}
             >

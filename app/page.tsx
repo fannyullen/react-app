@@ -64,7 +64,7 @@ export default function Home() {
   }
 
   return (
-    <main className="">
+    <main>
       <h1 className="mb-8 text-3xl font-bold">
         Welcome back!
       </h1>
@@ -95,7 +95,7 @@ export default function Home() {
           onChange={(event) => setNewTask(event.target.value)}
           onSubmit={handleAddTask}
           />
-          <button className="ml-2 rounded-md px-4 py-2 text-white bg-slate-950 shadow-2xl border border-slate-300 cursor-pointer">
+          <button className="ml-2 rounded-md px-4 py-2 text-white bg-white/10 dark:bg-white/20 shadow-2xl border border-slate-300 cursor-pointer">
             Add Task
           </button>
       </form>

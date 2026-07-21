@@ -21,7 +21,7 @@ export default function TaskCard({
             />
             <h3 className={`font-medium ${
                 completed
-                ? "line-through text-gray-400"
+                ? "line-through text-gray-300 dark:text-gray-400"
                 : "text-white"
             }`}
             >

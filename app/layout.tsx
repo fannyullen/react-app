@@ -30,9 +30,11 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <ThemeProvider>
-        <body className="min-h-full flex flex-col bg-slate-950">
-          <div className="fixed inset-0 bg-gradient-to-br from-fuchsia-900 via-slate-950 to-pink-800">
+        <body className="min-h-screen flex flex-col text-white dark:text-white transition-colors duration-300">
+          <ThemeProvider>
+          <div className="fixed inset-0 bg-gradient-to-br
+    from-indigo-400 via-sky-300 to-indigo-400
+    dark:from-fuchsia-900 dark:dark:via-slate-950 dark:to-violet-900">
             <Navbar />
             <div className="min-h-screen flex">
               <Sidebar />
@@ -41,8 +43,8 @@ export default function RootLayout({
               </main>
             </div>
           </div>
+          </ThemeProvider>
         </body>
-      </ThemeProvider>
     </html>
   );
 }
