@@ -4,6 +4,7 @@ import DashboardCard from "./components/Dashboard/DashboardCard";
 import { useState } from "react";
 import TaskList from "./components/Tasks/TaskList";
 import { Task } from "./data/task";
+import TaskForm from "./components/Tasks/AddTask/TaskForm";
 
 export default function Home() {
   const [tasks, setTasks] = useState([
@@ -87,18 +88,8 @@ export default function Home() {
 
       <hr />
 
-      <form className="mt-12">
-        <input
-          placeholder="Enter a new task..."
-          className="rounded-md border p-2"
-          value={newTask}
-          onChange={(event) => setNewTask(event.target.value)}
-          onSubmit={handleAddTask}
-          />
-          <button className="ml-2 rounded-md px-4 py-2 text-white bg-white/10 dark:bg-white/20 shadow-2xl border border-slate-300 cursor-pointer">
-            Add Task
-          </button>
-      </form>
+      <TaskForm onAddTask={handleAddTask} />
+
       <TaskList
         tasks={tasks}
         onToggleTask={toggleTask}
