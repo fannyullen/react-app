@@ -6,8 +6,12 @@ export default function TaskForm() {
 
     const [newTask, setNewTask] = useState("");
 
+    const handleSubmit = (event: React.FormEvent) => {
+        event.preventDefault();
+    }
+
     return (
-        <form className="mt-12">
+        <form className="mt-12" onSubmit={handleSubmit}>
             <input
             placeholder="Enter a new task..."
             className="rounded-md border p-2"

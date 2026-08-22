@@ -88,7 +88,7 @@ export default function Home() {
 
       <hr />
 
-      <TaskForm onAddTask={handleAddTask} />
+      <TaskForm /* onAddTask={handleAddTask} */ />
 
       <TaskList
         tasks={tasks}
