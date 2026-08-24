@@ -13,8 +13,12 @@ export default function TaskForm({ onAddTask }: TaskFormProps) {
 
     const handleSubmit = (event: React.FormEvent) => {
         event.preventDefault();
-
-        onAddTask(newTask);
+        
+        if (newTask.trim() === "") return; 
+        
+        onAddTask(newTask); 
+        
+        setNewTask("");
     }
 
     return (
