@@ -28,7 +28,6 @@ export default function TaskForm({ onAddTask }: TaskFormProps) {
             className="rounded-md border p-2"
             value={newTask}
             onChange={(event) => setNewTask(event.target.value)}
-            onSubmit={handleSubmit}
             />
             <button className="ml-2 rounded-md px-4 py-2 text-white bg-white/10 dark:bg-white/20 shadow-2xl border border-slate-300 cursor-pointer">
                 Add Task
