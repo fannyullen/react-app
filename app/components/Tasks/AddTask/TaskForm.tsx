@@ -1,13 +1,20 @@
 "use client";
 
 import { useState } from "react";
+import { Task } from "@/app/data/task";
 
-export default function TaskForm() {
+type TaskFormProps = {
+    onAddTask: (title: string) => void;
+};
+
+export default function TaskForm({ onAddTask }: TaskFormProps) {
 
     const [newTask, setNewTask] = useState("");
 
     const handleSubmit = (event: React.FormEvent) => {
         event.preventDefault();
+
+        onAddTask(newTask);
     }
 
     return (
@@ -17,7 +24,7 @@ export default function TaskForm() {
             className="rounded-md border p-2"
             value={newTask}
             onChange={(event) => setNewTask(event.target.value)}
-            /* onSubmit={handleAddTask} */
+            onSubmit={handleSubmit}
             />
             <button className="ml-2 rounded-md px-4 py-2 text-white bg-white/10 dark:bg-white/20 shadow-2xl border border-slate-300 cursor-pointer">
                 Add Task

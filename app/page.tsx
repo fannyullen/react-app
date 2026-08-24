@@ -3,7 +3,6 @@
 import DashboardCard from "./components/Dashboard/DashboardCard";
 import { useState } from "react";
 import TaskList from "./components/Tasks/TaskList";
-import { Task } from "./data/task";
 import TaskForm from "./components/Tasks/AddTask/TaskForm";
 
 export default function Home() {
@@ -25,29 +24,18 @@ export default function Home() {
     },
   ])
 
-  const [newTask, setNewTask] = useState("");
-
-  const task = {
-    id: Date.now(),
-    title: newTask,
-    completed: false,
-  };
-
   const openTasks = tasks.filter(task => !task.completed).length;
 
   const completedTasks = tasks.filter(task => task.completed).length;
 
-  function handleAddTask(event: React.FormEvent) {
-    {/* hindra standard-beteendet */}
-    event.preventDefault();
+  function handleAddTask(title: string) {
+      const newTask = {
+          id: Date.now(),
+          title: title,
+          completed: false,
+      };
 
-    {/* Om användaren bara skriver mellanslag så vill vi inte skapa en tom uppgift. Trim tar bort mellanslag i början och slutet */}
-    if (newTask.trim() === "") return;
-
-    {/* Spread operator */}
-    setTasks([...tasks, task]);
-
-    setNewTask("");
+      setTasks([...tasks, newTask]);
   }
 
   function toggleTask(id:number) {
@@ -88,7 +76,7 @@ export default function Home() {
 
       <hr />
 
-      <TaskForm /* onAddTask={handleAddTask} */ />
+      <TaskForm onAddTask={handleAddTask} />
 
       <TaskList
         tasks={tasks}
