@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { Task } from "@/app/data/task";
 
 type TaskFormProps = {
     onAddTask: (title: string) => void;
@@ -14,7 +13,7 @@ export default function TaskForm({ onAddTask }: TaskFormProps) {
     const handleSubmit = (event: React.FormEvent) => {
         event.preventDefault();
         
-        if (newTask.trim() === "") return; 
+        if (newTask.trim() === "") return;
         
         onAddTask(newTask); 
         
