@@ -1,4 +1,3 @@
-
 export default function ProfilePage() {
   return (
     <main className="p-6 md:p-8">
@@ -11,9 +10,9 @@ export default function ProfilePage() {
         </p>
       </div>
 
-      <section className="max-w-2xl rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+      <section className="hidden p-8 md:block bg-white/10 backdrop-blur-xl border border-white/20 shadow-2xl rounded-2xl">
         <div className="mb-6 flex items-center gap-4">
-          <div className="flex h-20 w-20 items-center justify-center rounded-full bg-violet-100 text-2xl font-bold text-violet-700 dark:bg-violet-950 dark:text-violet-300">
+          <div className="flex p-8 items-center justify-center rounded-full bg-violet-100 text-2xl font-bold text-violet-700 dark:bg-violet-950 dark:text-violet-300">
             DU
           </div>
 
