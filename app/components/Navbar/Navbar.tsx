@@ -3,6 +3,7 @@
 import { nav } from "framer-motion/client";
 import { useTheme } from "@/app/src/hooks/useTheme";
 import { FiMenu } from "react-icons/fi";
+import Link from "next/link";
 
 export default function Navbar() {
     const { theme, toggleTheme } = useTheme();
@@ -15,10 +16,15 @@ export default function Navbar() {
                 <FiMenu />
             </div>
             <div className="flex gap-4">
-                <button className="cursor-pointer w-10 h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 transition duration-300" onClick={toggleTheme}>
+                <button className="cursor-pointer" onClick={toggleTheme}>
                     {theme === "dark" ? "☀️" : "🌙"}
                 </button>
-                <button className="cursor-pointer">Profil</button>
+                <Link
+                href="/profile"
+                className="flex items-center gap-3 rounded-lg p-3 transition-colors hover:bg-white/10"
+                >
+                <span>Profil</span>
+                </Link>
             </div>
         </nav>
     );
