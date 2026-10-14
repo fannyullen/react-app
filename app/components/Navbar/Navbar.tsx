@@ -16,6 +16,7 @@ export default function Navbar() {
                 <FiMenu />
             </div>
             <div className="flex gap-4">
+                <input placeholder="search" type="text" className="h-8 m-2 rounded-lg px-4 py-2 text-white bg-white/10 dark:bg-white/20 shadow-2xl border border-slate-300 cursor-pointer" />
                 <button className="cursor-pointer" onClick={toggleTheme}>
                     {theme === "dark" ? "☀️" : "🌙"}
                 </button>
