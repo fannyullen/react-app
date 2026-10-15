@@ -24,7 +24,9 @@ export default function Navbar() {
                 href="/profile"
                 className="flex items-center gap-3 rounded-lg p-3 transition-colors hover:bg-white/10"
                 >
-                <span>Profil</span>
+                <span className="text-xl">
+                    <i className="bi bi-person"></i>
+                </span>
                 </Link>
             </div>
         </nav>
